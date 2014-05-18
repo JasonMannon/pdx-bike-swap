@@ -1,0 +1,3 @@
+class BrakesController < ApplicationController
+
+end

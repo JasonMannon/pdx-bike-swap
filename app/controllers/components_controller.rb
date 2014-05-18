@@ -1,10 +1,10 @@
-class ComponenetsController < ApplicationController
+class ComponentsController < ApplicationController
   def index
   	@components = Component.all 
   end
 
   def new
-  	@component = Componenet.new
+  	@component = Component.new
   end
 
   def create

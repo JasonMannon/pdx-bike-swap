@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: portlandbikeswap_development
+
+test:
+  adapter: postgresql
+  database: portlandbikeswap_test

@@ -8,12 +8,16 @@ class ComponentsController < ApplicationController
   end
 
   def create
-  	@componenet = Componenet.new(componenet_params)
-  	if @componenet.save?
-  		redirect_to root_url, notice: "Product added"
+  	@component = Component.new(component_params)
+  	if @component.save
+  		redirect_to root_url, notice: "Your item has been added"
   	else
   		render "new"
   	end
   end
-
+  
+  private
+  def component_params
+    params.require(:component).permit(:user_id, :category_id, :company, :name, :price, :condition, :description)
+  end
 end

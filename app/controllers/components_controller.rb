@@ -1,10 +1,15 @@
 class ComponentsController < ApplicationController
   def index
   	@components = Component.all 
+    @component = Component.find_by(params[:id])
   end
 
   def new
   	@component = Component.new
+  end
+
+  def show
+    @components = Component.all
   end
 
   def create
@@ -18,6 +23,6 @@ class ComponentsController < ApplicationController
   
   private
   def component_params
-    params.require(:component).permit(:user_id, :category_id, :company, :name, :price, :condition, :description)
+    params.require(:component).permit(:user_id, :category_id, :company, :name, :price, :condition, :description, :photo)
   end
 end

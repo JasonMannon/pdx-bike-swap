@@ -25,20 +25,16 @@
         <li><%= link_to "Add Item", new_component_path %></li>
       <% end %>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Catagories <b class="caret"></b></a>
+        <a class="dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
         <ul class="dropdown-menu">
         	<li class="dropdown-header">Complete Bikes</li>
-          <li><a href="#">Road</a></li>
-          <li><a href="#">BMX</a></li>
-          <li><a href="#">Mountain</a></li>
-          <li><a href="#">Other</a></li>
-          <li class="divider"></li>
-          <li class="dropdown-header">Components</li>
-          <li><a href="#">Accesories</a></li>
-          <li><a href="#">Brakes</a></li>
-          <li><a href="#">Cranksets</a></li>
-          <li><a href="#">Deraillurs</a></li>
-          <li><a href="#">Brakes</a></li>
+          <% Bike.all.each do |bike| %>
+            <li><%= link_to bike.name %></li>
+          <% end %>
+          <li class='dropdown-header'>Components</li>
+          <% Category.all.each do |category| %>
+            <li><%= link_to category.part, category_path(category) %></li>
+          <% end %>
         </ul>
       </li>
     </ul>

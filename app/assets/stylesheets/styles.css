@@ -1,9 +1,13 @@
-body {
+/*body {
   background: url(background.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+ }*/
+
+ body {
+ 	background-color: #2F4F4F;
  }
 
 .thumbnail {
@@ -14,3 +18,15 @@ body {
 	opacity: 1.0;
 }
 
+.list-group {
+	opacity: 0.8;
+}
+
+#owl-demo .item{
+  margin: 3px;
+}
+#owl-demo .item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}

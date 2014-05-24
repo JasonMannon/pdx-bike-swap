@@ -1,47 +1,42 @@
-<h1>Hello</h1>
-<body data-spy="scroll" data-target=".list-group">
-<div class="list-group">
-  <a href="#" class="list-group-item active">
-    Cras justo odio
+<div class="row">
+  <div class='col-sm-3'>
+    <div class="list-group">
+  <a class="list-group-item active">
+    All <%= @component.category.part %>
   </a>
-  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-  <a href="#" class="list-group-item">Morbi leo risus</a>
-  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-  <a href="#" class="list-group-item">Vestibulum at eros</a>
-  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-  <a href="#" class="list-group-item">Morbi leo risus</a>
-  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-  <a href="#" class="list-group-item">Vestibulum at eros</a>
-  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-  <a href="#" class="list-group-item">Morbi leo risus</a>
-  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-  <a href="#" class="list-group-item">Vestibulum at eros</a>
-  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-  <a href="#" class="list-group-item">Morbi leo risus</a>
-  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-  <a href="#" class="list-group-item">Vestibulum at eros</a>
-  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-  <a href="#" class="list-group-item">Morbi leo risus</a>
-  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-  <a href="#" class="list-group-item">Vestibulum at eros</a>
-  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-  <a href="#" class="list-group-item">Morbi leo risus</a>
-  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-  <a href="#" class="list-group-item">Vestibulum at eros</a>
-  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-  <a href="#" class="list-group-item">Morbi leo risus</a>
-  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-  <a href="#" class="list-group-item">Vestibulum at eros</a>
-  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-  <a href="#" class="list-group-item">Morbi leo risus</a>
-  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-  <a href="#" class="list-group-item">Vestibulum at eros</a>
-  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-  <a href="#" class="list-group-item">Morbi leo risus</a>
-  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-  <a href="#" class="list-group-item">Vestibulum at eros</a><a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-  <a href="#" class="list-group-item">Morbi leo risus</a>
-  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-  <a href="#" class="list-group-item">Vestibulum at eros</a>
+  <% Component.all.each do |component| %>
+    <% if component.category_id == @component.category.id %>
+      <%= link_to component.name, component_path(component), :class=>'list-group-item' %>
+      
+    <% end %>
+  <% end %>
+  </div>
 </div>
-</body>
+  <div class="col-sm-9">
+    <div class="thumbnail">
+       <div class="caption">
+<ul class="bxslider">
+  <% Component.all.each do |component| %>
+    <% if component.category_id == @component.category.id %>
+      <center><li><%= image_tag @component.photo(:medium) %></li></center>
+    <% end %>
+  <% end %>
+</ul>
+<center>
+  <h1>
+    <%= @component.company %>:<br>
+    <%= @component.name %>
+  </h1>
+  <h2>
+    Price: $<%= @component.price %><br>
+    Condition: <%= @component.condition %><br>   
+  </h2>
+  <p><%= @component.description %></p>
+  <%= link_to "Contact Seller", :class=>"btn btn-success" %>
+</center>
+
+          
+       </div>
+    </div>
+  </div>
+</div>

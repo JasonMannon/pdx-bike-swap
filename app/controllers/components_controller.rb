@@ -9,7 +9,7 @@ class ComponentsController < ApplicationController
   end
 
   def show
-    @components = Component.all
+    @component = Component.find(params[:id])
   end
 
   def create

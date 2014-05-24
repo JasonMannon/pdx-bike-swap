@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bxslider
 //= require_tree .
 // Loads all Bootstrap javascripts
 //= require bootstrap
+//= require bxslider

@@ -12,6 +12,7 @@ gem 'bcrypt'
 gem 'devise'
 gem 'bootstrap-sass-extras'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'bxslider-rails'
 
 group :development do
   gem 'better_errors'

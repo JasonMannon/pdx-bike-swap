@@ -13,6 +13,7 @@ gem 'devise'
 gem 'bootstrap-sass-extras'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'bxslider-rails'
+gem "letter_opener"
 
 group :development do
   gem 'better_errors'

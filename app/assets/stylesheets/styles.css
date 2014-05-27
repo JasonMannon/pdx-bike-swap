@@ -30,3 +30,27 @@
   width: 100%;
   height: auto;
 }
+
+.float-left img {
+  float: left;
+}
+
+.float-center {
+  float: center;
+}
+
+.float-right {
+  float: right;
+}
+
+.w {
+  margin-top: 60px;
+}
+.w i {
+  font-size: 26px;
+  padding: 12px;
+}
+
+.jumbotron {
+  opacity: 0.8;
+}

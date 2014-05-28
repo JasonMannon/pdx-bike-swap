@@ -1,0 +1,22 @@
+<% Component.all.each do |component| %>
+		<% if component.category_id == @category.id %>
+		  <div class="col-sm-6 col-md-3">
+		    <div class="thumbnail">
+		      <%= image_tag component.photo(:medium) %>
+		      <div class="caption">
+		        <h3><center><%= component.company %>: <%= component.name %></center></h3>
+		        <p>
+		          <center>price: <%= component.price %></center>
+		          <center>condition: <%= component.condition %></center>
+		        </p>
+		        <p><center>
+	                 <%= link_to "More Info", component_path(component), :class=>'btn btn-success' %></center></p>
+		      </div>
+		    </div>
+		  </div>
+		  <% else %>
+		    <h1>There are no current <%= @category.part %> listings</h1>
+		    <% break %>
+		<% end %>
+
+  <% end %>

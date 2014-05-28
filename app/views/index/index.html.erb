@@ -1,17 +1,21 @@
-<div class='row'>
-	<div class="col-sm-4">
-		<div class="thumbnail">
-			<div class="caption">
-				<h1>Welcome to PDX Bike Swap</h1>
-			</div>
-		</div>
-	</div>
-	<div class="col-sm-8">
-		<div class='thumbnail'>
-			<div class="caption">
-				<center><h1>New listings</h1></center>
-				
-			</div>
-		</div>
-	</div>
-</div>
+<center>
+  <div class="container">
+  	<h1>Newest Listings</h1>
+  </div>
+</center>
+<% @components.each do |component| %>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <%= image_tag component.photo(:medium) %>
+      <div class="caption">
+        <h3><center><%= component.company %>: <%= component.name %></center></h3>
+        <p>
+          <center>price: <%= component.price %></center>
+          <center>condition: <%= component.condition %></center>
+        </p>
+        <p><center>
+             <%= link_to "More Info", component_path(component), :class=>'btn btn-success' %></center></p>
+      </div>
+    </div>
+  </div>
+<% end %>

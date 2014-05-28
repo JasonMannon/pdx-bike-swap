@@ -1,25 +1,29 @@
+
+
 <% Component.order('created_at DESC').all.each do |component| %>
-  <div class='container'>
+  <% if component.category_id == @category.id && component.nil != false %>
+	<div class='container'>
 	  <div class="thumbnail">
-			<% if component.category_id == @category.id %>
-				<div class='row'>
-					<div class="col-sm-2">
-						<%= image_tag component.photo(:thumb) %>
-					</div>
-					<div class="col-sm-4">
-						<p>
-						  <%= component.company %>: <%= component.name %><br>
-					   price: $<%= component.price %><br>
-					   condition: <%= component.condition %><br></p>
-					 </div>
-					 <div class="col-sm-3">
-					 	Posted: <%= component.created_at.strftime("%b %d, %Y")%>
-					 </div>
-					 <div class="col-sm-3">
-					 	  <%= link_to "More Info", component_path(component), :class=>'btn btn-success' %>
-					 </div>
-				 </div>
-		  <% end %>
+		<div class='row'>
+		  <div class="col-sm-2">
+			<%= image_tag component.photo(:thumb) %>
+       	  </div>
+		  <div class="col-sm-4">
+		    <p>
+			  <%= component.company %>: <%= component.name %><br>
+			  price: $<%= component.price %><br>
+			  condition: <%= component.condition %><br>
+			</p>
+		  </div>
+		  <div class="col-sm-3">
+		    Posted: <%= component.created_at.strftime("%b %d, %Y")%>
+		  </div>
+		  <div class="col-sm-3">
+		    <%= link_to "More Info", component_path(component), :class=>'btn btn-success' %>
+		  </div>
+		</div>
 	  </div>
-	</div>
+    </div>
+  <% end %>
 <% end %>	
+

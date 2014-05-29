@@ -25,7 +25,7 @@
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <% Category.order('part DESC').all.each. do |category| %>
+          <% Category.all.each do |category| %>
             <li><%= link_to category.part, category_path(category) %></li>
           <% end %>
         </ul>

@@ -4,9 +4,12 @@
   </div>
 </center>
 <% @components.each do |component| %>
-  <div class="col-sm-10 col-md-4">
+
+  <div class="col-sm-12 col-md-3">
     <div class="thumbnail">
-      <%= image_tag component.photo(:medium) %>
+      
+        <%= image_tag component.photo(:medium) %>
+   
       <div class="caption">
         <h3><center><%= component.company %>:<br> <%= component.name %></center></h3>
         <p>
@@ -18,4 +21,4 @@
       </div>
     </div>
   </div>
-<% end %>
+<% end %> <br><br><br>

@@ -1,13 +1,16 @@
 /*body {
-  background: url(background.jpg) no-repeat center center fixed; 
+  background: url(tree.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
  }*/
+h1 {
+  color: #FFFFFF;
+}
 
  body {
- 	background-color: #2F4F4F;
+ 	background-color: #232B2B;
  }
 
 .thumbnail {
@@ -43,6 +46,8 @@
   float: right;
 }
 
+
+
 .w {
   margin-top: 60px;
 }
@@ -53,4 +58,18 @@
 
 .jumbotron {
   opacity: 0.8;
+}
+
+.email {
+  display: none;
+}
+
+.h1-black {
+  color: #000000;
+}
+
+
+textarea {
+    width: 400px;
+    height: 250px;
 }

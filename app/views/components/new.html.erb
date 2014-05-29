@@ -1,1 +1,9 @@
-<%= render 'form' %>
+<% if user_signed_in? %>
+  <center>
+	  <div class="jumbotron">
+      <%= render 'form' %>
+    </div>
+  </center>
+<% else %>
+  <h1>Please <%= link_to "Log in", new_user_session_path %> or <%= link_to "Sign up", new_user_registration_path %> to add a listing</h1>
+<% end %>

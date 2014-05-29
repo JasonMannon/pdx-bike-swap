@@ -1,7 +1,8 @@
-
+ <% components = [] %>
 
 <% Component.order('created_at DESC').all.each do |component| %>
-  <% if component.category_id == @category.id && component.nil != false %>
+  <% if component.category_id == @category.id  %>
+    <% components << component %>
 	<div class='container'>
 	  <div class="thumbnail">
 		<div class='row'>

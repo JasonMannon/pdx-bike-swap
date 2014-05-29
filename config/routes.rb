@@ -6,4 +6,5 @@ Portlandbikeswap::Application.routes.draw do
   end
   resources :components
   root to: "index#index"
+  resources :emailer
 end

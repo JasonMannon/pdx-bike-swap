@@ -1,17 +1,19 @@
+<h1> Add a new listing: </h1>
 <%= form_for @component, :html => { :multipart => true } do |f| %>
   <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.label "Company" %> <br />
+  <%= f.label "Company:" %> <br />
   <%= f.text_field :company %><br />
-  <%= f.label "Product Name" %> <br />
+  <%= f.label "Product Name:" %> <br />
   <%= f.text_field :name %><br />
-  <%= f.label "Price" %> <br />
+  <%= f.label "Price:" %> <br />
   <%= f.text_field :price %><br />
-  <%= f.label "Condition" %> <br />
+  <%= f.label "Condition:" %> <br />
   <%= f.text_field :condition %><br />
-  <%= f.label "Description" %> <br />
+  <%= f.label "Description:" %> <br />
   <%= f.text_area :description %><br />
-  <%= f.label "Category" %><br>
+  <%= f.label "Category:" %><br>
   <%= f.collection_select :category_id, Category.all,:id,:part, include_blank: true %><br><br>
+  <%= f.label "Photo:" %><br>
   <%= f.file_field :photo %>
   <%= f.submit "Submit Listing", :class => "btn btn-success" %><br />
 <% end %>

@@ -14,6 +14,7 @@ gem 'bootstrap-sass-extras'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'bxslider-rails'
 gem "letter_opener"
+gem 'mailboxer', git: 'git://github.com/ging/mailboxer.git'
 
 group :development do
   gem 'better_errors'

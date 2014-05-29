@@ -23,16 +23,41 @@
   <% end %>
 </ul>
 <center>
-  <h1>
+  <h1 class='h1-black'>
     <%= @component.company %>:<br>
     <%= @component.name %>
   </h1>
   <h2>
     Price: $<%= @component.price %><br>
-    Condition: <%= @component.condition %><br>   
+    Condition: <%= @component.condition %>
   </h2>
-  <p><%= @component.description %></p>
-  <%= link_to "Contact Seller", :class=>"btn btn-success" %>
+  <h4>
+    Description:
+  </h4>
+  <p><%= @component.description %><br>
+  </p>
+   <h4>
+    Posted: <%= @component.created_at.strftime("%b %d, %Y") %>  
+  </h4>
+
+  <div class='clickable'>
+    <button class="btn btn-success">Contact Seller</button> 
+  </div>
+  <div class='email'>  
+    <form action="MAILTO:someone@example.com" method="post" enctype="text/plain">
+      Name:<br>
+      <input type="text" name="name" value="your name"><br>
+      E-mail:<br>
+      <input type="text" name="mail" value="your email"><br>
+      Comment:<br>
+      <input type="text" name="comment" value="your comment"><br><br>
+      <input type="submit" value="Send">
+      <input type="reset" value="Reset">
+    </form>
+  </div>
+
+
+  <%#link_to "Contact Seller", :class=>"btn btn-success" %>
 </center>
 
           

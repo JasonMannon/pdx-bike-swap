@@ -25,12 +25,7 @@
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
         <ul class="dropdown-menu">
-        	<li class="dropdown-header">Complete Bikes</li>
-          <% Bike.all.each do |bike| %>
-            <li><%= link_to bike.name %></li>
-          <% end %>
-          <li class='dropdown-header'>Components</li>
-          <% Category.all.each do |category| %>
+          <% Category.order('part DESC').all.each. do |category| %>
             <li><%= link_to category.part, category_path(category) %></li>
           <% end %>
         </ul>

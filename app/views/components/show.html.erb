@@ -28,7 +28,7 @@
     <%= @component.name %>
   </h1>
   <h2>
-    Price: $<%= @component.price %><br>
+    Price: $<%= @component.price.to_i %><br>
     Condition: <%= @component.condition %>
   </h2>
   <h4>

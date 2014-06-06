@@ -1,5 +1,6 @@
-
-<h1>No listings found</h1>
+<% if @components.length < 1 %>
+  <h1>No listings found</h1>
+<% else %>
 <% @components.order('created_at DESC').all.each do |component| %>   
 	<div class='container'>
 	  <div class="thumbnail">
@@ -24,3 +25,4 @@
 	  </div>
 	</div>
 <% end %>	
+<% end %>

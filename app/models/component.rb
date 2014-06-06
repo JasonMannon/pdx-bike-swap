@@ -4,6 +4,6 @@ class Component < ActiveRecord::Base
   has_attached_file :photo, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
   def self.search(query)
-  	where("company LIKE ? OR name LIKE ?", "%#{query}%", "%#{query}%") 
+  	where("company ILIKE ? OR name ILIKE ?", "%#{query}%", "%#{query}%") 
   end
 end

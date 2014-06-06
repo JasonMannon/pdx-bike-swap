@@ -30,10 +30,10 @@
           <% end %>
         </ul>
       </li>
-    </ul>
-    <form class="navbar-form navbar-left">
-      <input type="text" class="form-control col-lg-8" placeholder="Search">
-    </form>
+    </ul>  
+    <%= form_tag(components_path, :class => 'nav navbar-nav navbar-left', :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Lisitings" %>
+    <% end %>
     <ul class="nav navbar-nav navbar-right">
     	<% if user_signed_in? %>
 			 <li> Logged in as <strong><%= current_user.email %></strong>.</li>

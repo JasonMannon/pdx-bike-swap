@@ -1,7 +1,13 @@
 class ComponentsController < ApplicationController
   def index
-  	@components = Component.all 
+  	
     @component = Component.find_by(params[:id])
+    if params[:search]
+      @components = Component.search(params[:search]).order("created_at DESC")
+    else
+      @components = Component.all.order('created_at DESC')
+  end
+
   end
 
   def new

@@ -15,6 +15,7 @@ gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'bxslider-rails'
 gem "letter_opener"
 gem 'aws-sdk'
+gem 'rambling-slider-rails'
 
 
 group :development do

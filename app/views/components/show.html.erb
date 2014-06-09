@@ -15,7 +15,7 @@
   <div class="col-sm-9">
     <div class="thumbnail">
        <div class="caption">
-<ul class="bxslider">
+<ul class="sliderId">
   <% Component.all.each do |component| %>
     <% if component.category_id == @component.category.id %>
       <center><li><%= image_tag @component.photo(:medium) %></li></center>
@@ -55,6 +55,7 @@
       <input type="reset" value="Reset">
     </form>
   </div>
+  <%= render "form_test" %>
 
 
   <%#link_to "Contact Seller", :class=>"btn btn-success" %>

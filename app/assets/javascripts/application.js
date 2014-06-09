@@ -18,3 +18,4 @@
 // Loads all Bootstrap javascripts
 //= require bootstrap
 //= require bxslider
+//= require jquery.rambling.slider

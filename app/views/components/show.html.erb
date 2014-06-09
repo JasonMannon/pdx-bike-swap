@@ -15,53 +15,43 @@
   <div class="col-sm-9">
     <div class="thumbnail">
        <div class="caption">
-<ul class="sliderId">
-  <% Component.all.each do |component| %>
-    <% if component.category_id == @component.category.id %>
-      <center><li><%= image_tag @component.photo(:medium) %></li></center>
-    <% end %>
-  <% end %>
-</ul>
-<center>
-  <h1 class='h1-black'>
-    <%= @component.company %>:<br>
-    <%= @component.name %>
-  </h1>
-  <h2>
-    Price: $<%= @component.price.to_i %><br>
-    Condition: <%= @component.condition %>
-  </h2>
-  <h4>
-    Description:
-  </h4>
-  <p><%= @component.description %><br>
-  </p>
-   <h4>
-    Posted: <%= @component.created_at.strftime("%b %d, %Y") %>  
-  </h4>
+          <center><%= image_tag @component.photo(:medium) %></center>
+          <center>
+            <h1 class='h1-black'>
+              <%= @component.company %>:<br>
+              <%= @component.name %>
+            </h1>
+            <h2>
+              Price: $<%= @component.price.to_i %><br>
+              Condition: <%= @component.condition %>
+            </h2>
+            <h4>
+              Description:
+            </h4>
+            <p><%= @component.description %><br>
+            </p>
+             <h4>
+              Posted: <%= @component.created_at.strftime("%b %d, %Y") %>  
+            </h4>
 
-  <div class='clickable'>
-    <button class="btn btn-success">Contact Seller</button> 
-  </div>
-  <div class='email'>  
-    <form action="MAILTO:someone@example.com" method="post" enctype="text/plain">
-      Name:<br>
-      <input type="text" name="name" value="your name"><br>
-      E-mail:<br>
-      <input type="text" name="mail" value="your email"><br>
-      Comment:<br>
-      <input type="text" name="comment" value="your comment"><br><br>
-      <input type="submit" value="Send">
-      <input type="reset" value="Reset">
-    </form>
-  </div>
-  <%= render "form_test" %>
-
-
+            <div class='clickable'>
+              <button class="btn btn-success">Contact Seller</button> 
+            </div>
+            <div class='email'>  
+              <form action="MAILTO:someone@example.com" method="post" enctype="text/plain">
+                Name:<br>
+                <input type="text" name="name" value="your name"><br>
+                E-mail:<br>
+                <input type="text" name="mail" value="your email"><br>
+                Comment:<br>
+                <input type="text" name="comment" value="your comment"><br><br>
+                <input type="submit" value="Send">
+                <input type="reset" value="Reset">
+              </form>
+            </div>
+            <%= render "form_test" %>
   <%#link_to "Contact Seller", :class=>"btn btn-success" %>
-</center>
-
-          
+          </center>        
        </div>
     </div>
   </div>

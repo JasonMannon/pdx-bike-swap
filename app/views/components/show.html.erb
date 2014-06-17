@@ -20,24 +20,27 @@
         </div>
       </div>
    <br><br>
-    <h2>
-      Price:
-    </h2>
-    <h4>
-      $<%= @component.price.to_i %>
-    </h4>
-    <h2><hr>
-      Condition:
-    </h2>
-    <h4>
-      <%= @component.condition %>
-    </h4><hr>
-    <h4>
-      Posted: <%= @component.created_at.strftime("%b %d, %Y") %> 
-    </h4><hr>
-
-        <p><%= @component.description %></p><hr>
-    
+     <div class="col-sm-5">
+       <h2>
+         Price:
+       </h2>
+       <h4>
+         $<%= @component.price.to_i %>
+       </h4>
+       <h2><hr>
+         Condition:
+       </h2>
+       <h4>
+         <%= @component.condition %>
+       </h4><hr>
+       <h4>
+         Posted: <%= @component.created_at.strftime("%b %d, %Y") %> 
+       </h4><hr>
+    </div>
+    <div class="col-sm-12">
+      <p><%= @component.description %></p><hr>
+    </div>
+    <br><br>
     <center>
       <h3>Contact Seller</h3>
       <%= form_tag do %>
@@ -52,7 +55,8 @@
         <%= hidden_field_tag(:email, @component.user.email) %>
         <%= submit_tag "Send Email", :class => "btn btn-success" %>
       <% end %>  
-    </center>          
+    </center>   
+
 <%#link_to "Contact Seller", :class=>"btn btn-success" %>            
     </div>
   </div>

@@ -76,3 +76,7 @@ textarea {
   width: 100px;
   height: auto;
 }
+
+.email {
+  display: none;
+}

@@ -1,63 +1,59 @@
 <div class="row">
   <div class='col-sm-3'>
     <div class="list-group">
-      <a class="list-group-item active">
-        All <%= @component.category.part %>
-      </a>
-    <% Component.all.each do |component| %>
-      <% if component.category_id == @component.category.id %>
-        <%= link_to component.name, component_path(component), :class=>'list-group-item' %> 
-      <% end %>
+  <a class="list-group-item active">
+    All <%= @component.category.part %>
+  </a>
+  <% Component.all.each do |component| %>
+    <% if component.category_id == @component.category.id %>
+      <%= link_to component.name, component_path(component), :class=>'list-group-item' %>
+      
     <% end %>
+  <% end %>
   </div>
 </div>
   <div class="col-sm-9">
     <div class="thumbnail">
-      <div class='col-sm-12'>
-        <h2><%= @component.company %>: <%= @component.name %></h2>
-      </div>
-      <div class="col-sm-7">
-        <div class="caption">
-          <%= image_tag @component.photo(:medium) %>
-        </div>
-      </div>
-      <div class="col-sm-5">
-        <h2>
-          Price:
-        </h2>
-        <h4>
-          $<%= @component.price.to_i %>
-        </h4>
-        <h2><hr>
-          Condition:
-        </h2>
-        <h4>
-          <%= @component.condition %>
-        </h4><hr>
-        <h4>
-          Posted: <%= @component.created_at.strftime("%b %d, %Y") %> 
-        </h4><hr>
+       <div class="caption">
+          <center><%= image_tag @component.photo(:medium) %></center>
+          <center>
+            <h1 class='h1-black'>
+              <%= @component.company %>:<br>
+              <%= @component.name %>
+            </h1>
+            <h2>
+              Price:<h4>$<%= @component.price.to_i %></h4><br></h2>
+              Condition: <%= @component.condition %>
+            <h4>
+              Description:
+            </h4>
+            <p><%= @component.description %><br>
+            </p>
+             <h4>
+              Posted: <%= @component.created_at.strftime("%b %d, %Y") %>  
+            </h4>
+            <div class="row">
+            <div class='clickable'>
+              <button class="btn btn-success">Contact Seller</button> 
+            </div>
+          </div>
+            <div class='email'>  
+              <form action="MAILTO:someone@example.com" method="post" enctype="text/plain">
+                Name:<br>
+                <input type="text" name="name" value="your name"><br>
+                E-mail:<br>
+                <input type="text" name="mail" value="your email"><br>
+                Comment:<br>
+                <input type="text" name="comment" value="your comment"><br><br>
+                <input id="email" name="email" type="hidden" value=<% @component.user.email %> />
+                <input type="submit" value="Send">
+                <input type="reset" value="Reset">
+              </form>
+            </div>
+            <%= render "form_test" %>
+  <%#link_to "Contact Seller", :class=>"btn btn-success" %>
+          </center>        
        </div>
-       <div class="col-sm-12">
-         <p><%= @component.description %></p><hr>
-       </div>
-       <br><br>
-       <center>
-         <h3>Contact Seller</h3>
-         <%= form_tag do %>
-           <%= label_tag "Your Name" %><br>
-           <%= text_field_tag :message %><br>
-           <%= label_tag "Your Email" %><br>
-           <%= text_field_tag :message %><br>
-           <%= label_tag "Subject" %><br>
-           <%= text_field_tag(:message, "Reply from Portland Bike Swap", size: "32") %><br>
-           <%= label_tag "Message" %><br>
-           <%= text_area_tag size: "1x6" %><br>
-           <%= hidden_field_tag(:email, @component.user.email) %>
-           <%= submit_tag "Send Email", :class => "btn btn-success" %>
-         <% end %>  
-       </center>            
     </div>
   </div>
 </div>
-

@@ -19,3 +19,4 @@
 //= require bootstrap
 //= require bxslider
 //= require jquery.rambling.slider
+//= require fancybox

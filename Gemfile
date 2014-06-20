@@ -16,6 +16,7 @@ gem 'bxslider-rails'
 gem "letter_opener"
 gem 'aws-sdk'
 gem 'rambling-slider-rails'
+gem 'fancybox2-rails', '~> 0.2.8'
 
 
 group :development do

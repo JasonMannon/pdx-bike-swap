@@ -18,12 +18,12 @@
           <center><%= image_tag @component.photo(:medium) %></center>
           <center>
             <h1 class='h1-black'>
-              <%= @component.company %>:<br>
-              <%= @component.name %>
+              <%= @component.company %>: <%= @component.name %>
             </h1>
-            <h2>
-              Price:<h4>$<%= @component.price.to_i %></h4><br></h2>
-              Condition: <%= @component.condition %>
+            <h4>
+              Price:$<%= @component.price.to_i %>     Condition: <%= @component.condition %>
+            </h4>
+
             <h4>
               Description:
             </h4>

@@ -7,4 +7,5 @@ Portlandbikeswap::Application.routes.draw do
   resources :components
   root to: "index#index"
   resources :emailer
+  #get "components/contact_form" => 'components#contact_form', :as => :contact_form
 end

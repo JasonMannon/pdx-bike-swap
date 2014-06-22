@@ -1,7 +1,7 @@
 PDX Bike Swap
 =========
 
-http://murmuring-meadow-2609.herokuapp.com/
+http://pdxbikeswap.herokuapp.com/
 
 A free tool for the Portland area to buy and sell used bikes and parts.
 

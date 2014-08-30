@@ -27,6 +27,12 @@ class ComponentsController < ApplicationController
   		render "new"
   	end
   end
+
+  def destroy
+    @component = Component.find(params[:id])
+    @component.destroy
+    redirect_to root_url
+  end
   
   private
   def component_params

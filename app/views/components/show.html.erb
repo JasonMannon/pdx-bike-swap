@@ -50,6 +50,12 @@
                 <input type="reset" value="Reset">
               </form>
             </div>
+
+            <% if user_signed_in? %>
+              <% if current_user.id === @component.user_id %>
+                <%= link_to "Delete", component_path(@component), data: { method: "delete", confirm: "Are you super duper sure?"} %>
+              <% end %>
+            <% end %>
             
   <%#link_to "Contact Seller", :class=>"btn btn-success" %>
           </center>        
